@@ -30,7 +30,19 @@ def send_message(jsn):
     print "Sending Data to server..."
     socket = context.socket(zmq.REQ)
     socket.connect ("tcp://localhost:%s" % port)
-    socket.send_json (jsn)
+    jsn = json.loads(jsn)
+    data = {
+        "requestid":jsn['requestid'],
+        "UUID":jsn['UUID'],
+        "message":"ok",
+        "payload":
+            {
+                "key":"status",
+                 "value":True
+            },
+        "success":True}
+    jsn = json.dumps(data)
+    socket.send_json(jsn)
     
 while True:
     topic, msg = demogrify(socket.recv())

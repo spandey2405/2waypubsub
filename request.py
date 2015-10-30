@@ -8,9 +8,14 @@ try:
 except:
     gatewayid = 'GDM01'
 
+try:
+    reqid = sys.argv[2]
+except:
+    reqid = '000001'
+
 data = {
     "UUID":gatewayid,
-    "requestid":"289325",
+    "requestid":reqid,
     "payload":"0",
     "transducers":"ARE01",
 
