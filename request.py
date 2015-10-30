@@ -22,5 +22,5 @@ context = zmq.Context()
 print "Sending Data to server..."
 socket = context.socket(zmq.REQ)
 socket.connect ("tcp://localhost:%s" % port)
-socket.send (jsn)
+socket.send_json (jsn)
 

@@ -17,6 +17,6 @@ if isinstance(gateway_id, bytes):
 socket.setsockopt_string(zmq.SUBSCRIBE, gateway_id)
 print("Gateway Server : %s Online" % gateway_id)
 while True:
-    string = socket.recv_string()
+    string = socket.recv_json()
     print string
 
