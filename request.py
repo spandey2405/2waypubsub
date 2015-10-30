@@ -17,7 +17,7 @@ data = {
 }
 
 jsn = json.dumps(data)
-port = "5559"
+port = "5550"
 context = zmq.Context()
 print "Sending Data to server..."
 socket = context.socket(zmq.REQ)

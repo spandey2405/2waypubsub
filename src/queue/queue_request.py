@@ -6,7 +6,7 @@ def main():
         context = zmq.Context(1)
         # Socket facing clients
         frontend = context.socket(zmq.XREP)
-        frontend.bind("tcp://*:5559")
+        frontend.bind("tcp://*:5550")
         # Socket facing services
         backend = context.socket(zmq.XREQ)
         backend.bind("tcp://*:5560")
